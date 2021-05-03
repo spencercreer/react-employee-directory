@@ -3,12 +3,12 @@ import "./style.css";
 
 function EmployeeCard(props) {
   return (
-    <div className="card">
-      <div className="row no-gutters">
-        <div className="img-container col-md-4">
+    <div className="card col-sm-8">
+      <div className="row">
+        <div className="img-container col-sm-4">
           <img className="card-img" alt={props.name} src={props.image} />
         </div>
-        <div className="col-md-8">
+        <div className="col-sm-8">
           <div className="card-body">
             <h5 className="card-title"><strong>Name:</strong> {props.name}</h5>
             <ul>
@@ -22,9 +22,6 @@ function EmployeeCard(props) {
           </div>
         </div>
       </div>
-      {/* <span onClick={() => props.removeEmployee(props.id)} className="remove">
-        𝘅
-      </span> */}
     </div>
   );
 }
