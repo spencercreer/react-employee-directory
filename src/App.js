@@ -3,6 +3,16 @@ import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import employees from "./employees.json";
+import API from "./utils/API";
+
+const searchUsers = () => {
+  API.search()
+    .then(res =>console.log(res))
+    // .then(res => this.setState({ result: res.data }))
+    .catch(err => console.log(err));
+};
+
+searchUsers();
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
