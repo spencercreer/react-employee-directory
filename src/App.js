@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import employeeTitles from "./employeesTitles.json"
 import API from "./utils/API";
 
 
@@ -17,8 +18,10 @@ class App extends Component {
   
   searchUsers = () => {
     API.search()
-    // .then(res =>console.log(res.data.results))
-    .then(res => this.setState({ employees: res.data.results }))
+    .then(res => {
+      console.log(res.data.results)
+      this.setState({ employees: res.data.results })
+    })
     .catch(err => console.log(err));
   };
   
@@ -26,11 +29,12 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Employee Directory</Title>
+        <Title>DEVerest Employee Directory</Title>
         {this.state.employees.map((employee, id) => (
           <EmployeeCard
             id={id}
             key={id}
+            employeeId={`${employee.id.value.split("-")[0]}-${employee.id.value.split("-")[1]}`}
             firstName={employee.name.first}
             lastName={employee.name.last}
             image={employee.picture.large}
