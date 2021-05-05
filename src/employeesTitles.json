@@ -1,38 +1,17 @@
 [
   {
-    "occupation": "Fry Cook"
+    "title": "Fry Cook"
   },
   {
-    "occupation": "Restaurant Owner"
+    "title": "Restaurant Owner"
   },
   {
-    "occupation": "Cashier"
+    "title": "Cashier"
   },
   {
-    "occupation": "Boy Genius"
+    "title": "Boy Genius"
   },
   {
-    "occupation": "A Cowardly Dog"
-  },
-  {
-    "occupation": "Student"
-  },
-  {
-    "occupation": "Looney Toon"
-  },
-  {
-    "occupation": "Ladies Man"
-  },
-  {
-    "occupation": "Adventurer"
-  },
-  {
-    "occupation": "Cashier"
-  },
-  {
-    "occupation": "Superhero"
-  },
-  {
-    "occupation": "Ahhhh! A Real Monster!"
+    "title": "A Cowardly Dog"
   }
 ]
