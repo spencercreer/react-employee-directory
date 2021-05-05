@@ -10,13 +10,13 @@ function EmployeeCard(props) {
         </div>
         <div className="col-sm-8">
           <div className="card-body">
-            <h5 className="card-title"><strong>Name:</strong> {props.name}</h5>
+            <h5 className="card-title"><strong>Name:</strong> {`${props.firstName} ${props.lastName}`}</h5>
             <ul>
               <li className="card-text">
-                <strong>Occupation:</strong> {props.occupation}
+                <strong>Email:</strong> {props.email}
               </li>
               <li className="card-text">
-                <strong>Location:</strong> {props.location}
+                <strong>Phone:</strong> {props.phone}
               </li>
             </ul>
           </div>
