@@ -7,7 +7,7 @@ function Col(props) {
   const size = props.size.split(" ").map(size => "col-" + size).join(" ");
 
   return (
-    <div className={size}>
+    <div className={`${size} px-0`}>
       {props.children}
     </div>
   );

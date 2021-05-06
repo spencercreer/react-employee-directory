@@ -3,7 +3,7 @@ import "./style.css";
 
 export default function SearchForm() {
     return (
-        <div className="card p-3 col-md-4">
+        <div className="card p-3">
                 <div className="form-group">
                     <label htmlFor="formGroupExampleInput">Name</label>
                     <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Name" />

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm"
 import EmployeeCard from "./components/EmployeeCard";
-// import Container from "./components/Container";
-// import Row from "./Row";
-// import Col from "./Col";
+import Container from "./components/Container";
+import Row from "./components/Row";
+import Col from "./components/Col";
 import employeeTitles from "./employeesTitles.json"
 import API from "./utils/API";
 
@@ -19,10 +18,12 @@ class App extends Component {
     employeeTitles
   };
 
+  // When component mounts, call search users function
   componentDidMount() {
     this.searchUsers();
   }
 
+  // search random users api and set result to employees state
   searchUsers = () => {
     API.search()
       .then(res => {
@@ -43,13 +44,13 @@ class App extends Component {
   // Map over this.state.employees and render an EmployeeCard component for each employee object
   render() {
     return (
-      <Wrapper>
+      <Container fluid>
         <Title>DEVerest Employee Directory</Title>
-        {/* <Row>
-          <Col size="md-4"> */}
+        <Row>
+          <Col size="md-4">
             <SearchForm />
-          {/* </Col> */}
-          {/* <Col size="md-8"> */}
+          </Col>
+          <Col size="md-8">
             {this.state.employees.map((employee, id) => (
               <EmployeeCard
                 id={id}
@@ -64,9 +65,9 @@ class App extends Component {
                 extension={employee.phone.split("-")[2]}
               />
             ))}
-          {/* </Col>
-        </Row> */}
-      </Wrapper>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

@@ -3,14 +3,14 @@ import "./style.css";
 
 function EmployeeCard(props) {
   return (
-    <div className="card col-md-8">
+    <div className="card">
       <div className="row">
-        <div className="img-container col-md-4 p-3">
+        <div className="img-container col-sm-4 p-3">
           <img className="card-img" alt={props.name} src={props.image} style={{maxWidth: "190px"}} />
         </div>
-        <div className="col-md-8 px-2">
+        <div className="col-sm-8 px-2">
           <div className="card-body px-2">
-            <h5 className="card-title"><strong>Name:</strong> {`${props.firstName} ${props.lastName}`}</h5>
+            <h4 className="card-title"><strong>{`${props.firstName} ${props.lastName}`}</strong></h4>
             <div className="mx-3">
               <div className="card-text">
                 <strong>Employee Id:</strong> {props.employeeId}
