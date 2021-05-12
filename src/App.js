@@ -5,41 +5,37 @@ import EmployeeCard from "./components/EmployeeCard";
 import Container from "./components/Container";
 import Row from "./components/Row";
 import Col from "./components/Col";
-import employeeTitles from "./employeesTitles.json"
 import API from "./utils/API";
-
-let people;
-let employeeInfo = [];
 
 class App extends Component {
   // Setting this.state.employees to empty array
   state = {
     employees: [],
-    employeeTitles
+    filteredEmployees: []
   };
+
+  handleSearchChange = event => {
+    const filter = event.target.value;
+    const filteredList = this.state.employees.filter(item => {
+      // need this to filter by first and last name
+      let firstName = Object.values(item)[1].first.toLowerCase();
+
+      return firstName.includes(filter.toLowerCase());
+    });
+    this.setState({ filteredEmployees: filteredList})
+  }
 
   // When component mounts, call search users function
   componentDidMount() {
-    this.searchUsers();
-  }
-
-  // search random users api and set result to employees state
-  searchUsers = () => {
     API.search()
-      .then(res => {
-        people = res.data.results
-        console.log("people")
-        console.log(people)
-        console.log("Employee Titles")
-        console.log(employeeTitles)
-        Array.prototype.push.apply(employeeTitles, people)
-        console.log("Employee Info")
-        console.log(employeeTitles)
-
-        this.setState({ employees: res.data.results })
+    .then(res => {
+      this.setState({ 
+        employees: res.data.results,
+        filteredEmployees: res.data.results 
       })
-      .catch(err => console.log(err));
-  };
+    })
+    .catch(err => console.log(err));
+  }
 
   // Map over this.state.employees and render an EmployeeCard component for each employee object
   render() {
@@ -48,10 +44,10 @@ class App extends Component {
         <Title>DEVerest Employee Directory</Title>
         <Row>
           <Col size="md-4">
-            <SearchForm />
+            <SearchForm handleSearchChange={this.handleSearchChange} />
           </Col>
           <Col size="md-8">
-            {this.state.employees.map((employee, id) => (
+            {this.state.filteredEmployees.map((employee, id) => (
               <EmployeeCard
                 id={id}
                 key={id}
@@ -59,7 +55,6 @@ class App extends Component {
                 firstName={employee.name.first}
                 lastName={employee.name.last}
                 image={employee.picture.large}
-                title={employeeTitles.title}
                 location={employee.timezone}
                 email={employee.email}
                 extension={employee.phone.split("-")[2]}

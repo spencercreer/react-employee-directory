@@ -16,15 +16,6 @@ function EmployeeCard(props) {
                 <strong>Employee Id:</strong> {props.employeeId}
               </div>
               <div className="card-text">
-                <strong>Title: </strong>{props.title}
-              </div>
-              <div className="card-text">
-                <strong>Supervisor: </strong>Spencer Creer
-              </div>
-              <div className="card-text">
-                <strong>Department: </strong>Software Engineering
-              </div>
-              <div className="card-text">
                 <strong>Email: </strong><a href={`mailto:${props.email[0]}.${props.email.split(/[.@]/gi)[1]}@deverest.com`} target="_blank">{`${props.email[0]}.${props.email.split(/[.@]/gi)[1]}@deverest.com`}</a>
               </div>
               <div className="card-text">
