@@ -1,13 +1,13 @@
 import React from 'react'
 import "./style.css";
 
-export default function SearchForm({ handleSearchChange }) {
+export default function SearchForm({ handleNameSearch, handleIdSearch }) {
     return (
         <div className="card p-3">
             <div className="form-group">
                 <label htmlFor="formGroupExampleInput">Name</label>
                 <input
-                    onChange={e => handleSearchChange(e)}
+                    onChange={e => handleNameSearch(e)}
                     type="text"
                     className="form-control"
                     id="name"
@@ -16,7 +16,7 @@ export default function SearchForm({ handleSearchChange }) {
             <div className="form-group">
                 <label htmlFor="formGroupExampleInput2">Employee Id</label>
                 <input
-                    onChange={e => handleSearchChange(e)}
+                    onChange={e => handleIdSearch(e)}
                     type="text"
                     className="form-control"
                     id="employee-id"
