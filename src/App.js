@@ -6,13 +6,60 @@ import Container from "./components/Container";
 import Row from "./components/Row";
 import Col from "./components/Col";
 import API from "./utils/API";
+import TableRow from "./components/TableRow";
+import "./App.css";
 
 class App extends Component {
   // Setting this.state.employees and this.state.filteredEmployees to empty array
   state = {
     employees: [],
-    filteredEmployees: []
+    filteredEmployees: [],
+    order: "descend"
   };
+
+  handleSort = heading => {
+    console.log(heading)
+    if (this.state.order === "descend") {
+      this.setState({
+        order: "ascend"
+      })
+    } else {
+      this.setState({
+        order: "descend"
+      })
+    }
+    const compareFnc = (a, b) => {
+      if (this.state.order === "ascend") {
+        // account for missing values
+        if (a[heading] === undefined) {
+          return 1;
+        } else if (b[heading] === undefined) {
+          return -1;
+        }
+        // numerically
+        else if (heading === "name") {
+          return a[heading].first.localeCompare(b[heading].first);
+        } else {
+          return a[heading] - b[heading];
+        }
+      } else {
+        // account for missing values
+        if (a[heading] === undefined) {
+          return 1;
+        } else if (b[heading] === undefined) {
+          return -1;
+        }
+        // numerically
+        else if (heading === "name") {
+          return b[heading].first.localeCompare(a[heading].first);
+        } else {
+          return b[heading] - a[heading];
+        }
+      }
+    }
+    const sortedUsers = this.state.filteredUsers.sort(compareFnc);
+    this.setState({ filteredUsers: sortedUsers });
+  }
 
   handleNameSearch = event => {
     const filter = event.target.value;
@@ -56,26 +103,40 @@ class App extends Component {
       <Container fluid>
         <Title>DEVerest Employee Directory</Title>
         <Row>
-          <Col size="md-4">
+          <Col size="lg-4">
             <SearchForm
               handleNameSearch={this.handleNameSearch}
               handleIdSearch={this.handleIdSearch}
             />
           </Col>
-          <Col size="md-8">
-            {this.state.filteredEmployees.map((employee, id) => (
-              <EmployeeCard
-                id={id}
-                key={id}
-                employeeId={`${employee.id.value.split("-")[0]}-${employee.id.value.split("-")[1]}`}
-                firstName={employee.name.first}
-                lastName={employee.name.last}
-                image={employee.picture.large}
-                location={employee.timezone}
-                email={employee.email}
-                extension={employee.phone.split("-")[2]}
-              />
-            ))}
+          <Col size="lg-8">
+            <table className="table table-sm">
+              <thead className="thead-light">
+                <tr>
+                  <th scope="col">Image</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col" className="hide-col">Emp ID</th>
+                  <th scope="col" className="hide-col">Email</th>
+                  <th scope="col">Ext</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.filteredEmployees.map((employee, id) => (
+                  <TableRow
+                    id={id}
+                    key={id}
+                    employeeId={`${employee.id.value.split("-")[0]}-${employee.id.value.split("-")[1]}`}
+                    firstName={employee.name.first}
+                    lastName={employee.name.last}
+                    image={employee.picture.large}
+                    email={employee.email}
+                    extension={employee.phone.split("-")[2]}
+                  />
+                ))}
+
+              </tbody>
+            </table>
           </Col>
         </Row>
       </Container>
