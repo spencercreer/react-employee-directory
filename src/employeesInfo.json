@@ -1,0 +1,82 @@
+[
+  {
+    "title": "VP Marketing",
+    "department": "Marketing"
+  },
+  {
+    "title": "VP Technology",
+    "department": "Engineering"
+  },
+  {
+    "title": "VP Human Resources",
+    "department": "Human Resources"
+  },
+  {
+    "title": "Sales Manager",
+    "department": "Sales"
+  },
+  {
+    "title": "Sales Engineer",
+    "department": "Sales"
+  },
+  {
+    "title": "Jr. Software Engineer",
+    "department": "Engineering"
+  },
+  {
+    "title": "QA Engineer",
+    "department": "Engineering"
+  },
+  {
+    "title": "Customer Service Representative",
+    "department": "Sales"
+  },
+  {
+    "title": "Sr. Software Engineer",
+    "department": "Engineering"
+  },
+  {
+    "title": "IT Manager",
+    "department": "IT"
+  },
+  {
+    "title": "Accountant",
+    "department": "Accounting"
+  },
+  {
+    "title": "HR Manager",
+    "department": "Human Resources"
+  },
+  {
+    "title": "Sales Representative",
+    "department": "Sales"
+  },
+  {
+    "title": "IT Analyst",
+    "department": "IT"
+  },
+  {
+    "title": "Software Architect",
+    "department": "Engineering"
+  },
+  {
+    "title": "Senior Programmer",
+    "department": "Programming"
+  },
+  {
+    "title": "Programmer",
+    "department": "Programming"
+  },
+  {
+    "title": "IT Coordinator",
+    "department": "IT"
+  },
+  {
+    "title": "Programmer Analyst",
+    "department": "Programming"
+  },
+  {
+    "title": "Cloud Architect",
+    "department": "Engineering"
+  }
+]

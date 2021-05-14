@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm"
-import EmployeeCard from "./components/EmployeeCard";
 import Container from "./components/Container";
 import Row from "./components/Row";
 import Col from "./components/Col";
 import API from "./utils/API";
+import EmployeeInfo from "./employeesInfo.json"
 import TableRow from "./components/TableRow";
 import "./App.css";
 
@@ -88,10 +88,18 @@ class App extends Component {
   // When component mounts, call search users function
   componentDidMount() {
     API.search()
-      .then(res => {
-        this.setState({
-          employees: res.data.results,
-          filteredEmployees: res.data.results
+    .then(res => {
+      console.log(EmployeeInfo)
+      console.log(res)
+      let users = res.data.results
+      let employees = []
+      for( let i=0; i < users.length; i++){
+        employees[i] = { ...users[i], ...EmployeeInfo[i]}
+      }
+      console.log(employees)
+      this.setState({
+          employees: employees,
+          filteredEmployees: employees
         })
       })
       .catch(err => console.log(err));
@@ -117,6 +125,7 @@ class App extends Component {
                   <th scope="col">First</th>
                   <th scope="col">Last</th>
                   <th scope="col" className="hide-col">Emp ID</th>
+                  <th scope="col">Title</th>
                   <th scope="col" className="hide-col">Email</th>
                   <th scope="col">Ext</th>
                 </tr>
@@ -132,6 +141,7 @@ class App extends Component {
                     image={employee.picture.large}
                     email={employee.email}
                     extension={employee.phone.split("-")[2]}
+                    title = {employee.title}
                   />
                 ))}
 
