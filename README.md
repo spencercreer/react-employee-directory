@@ -23,7 +23,7 @@ Repository: [https://github.com/spencercreer/react-employee-directory](https://g
 
 ## Animation
 The following animation demonstrates the application functionality:
-![DEVerest Employee Directory animation](TBD)
+![DEVerest Employee Directory animation](./public/assets/emp_dir.gif)
 
 ## Instructions
 Search for employee information in the three fields of the search form. When a value is typed in an input field, the users are filtered using state in the React virtual DOM.
