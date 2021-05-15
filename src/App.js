@@ -78,9 +78,20 @@ class App extends Component {
     const filteredList = this.state.employees.filter(item => {
       // filter by employee id
       let id = `${Object.values(item)[9].value.split("-")[0]}-${Object.values(item)[9].value.split("-")[1]}`
-      console.log(id);
 
       return id.includes(filter);
+    });
+    this.setState({ filteredEmployees: filteredList });
+  }
+
+  handleTitleSearch = event => {
+    const filter = event.target.value;
+    const filteredList = this.state.employees.filter(item => {
+      console.log(Object.values(item))
+      // filter by employee title
+      let title = Object.values(item)[12].toLowerCase();
+
+      return title.includes(filter.toLowerCase());
     });
     this.setState({ filteredEmployees: filteredList });
   }
@@ -115,6 +126,7 @@ class App extends Component {
             <SearchForm
               handleNameSearch={this.handleNameSearch}
               handleIdSearch={this.handleIdSearch}
+              handleTitleSearch={this.handleTitleSearch}
             />
           </Col>
           <Col size="lg-8">
@@ -125,7 +137,7 @@ class App extends Component {
                   <th scope="col">First</th>
                   <th scope="col">Last</th>
                   <th scope="col" className="hide-col">Emp ID</th>
-                  <th scope="col">Title</th>
+                  <th scope="col" className="hide-col">Title</th>
                   <th scope="col" className="hide-col">Email</th>
                   <th scope="col">Ext</th>
                 </tr>

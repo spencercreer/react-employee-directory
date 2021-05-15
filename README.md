@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# DEVerest Employee Directory
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is an employee directory React.js application. Employees can view information about their colleagues and can search by employee name, id, and title.
 
-## Available Scripts
+## Table of Contents
+* [Links](#links)
+* [Animation](#animation) 
+* [Instructions](#instructions) 
+* [Installation](#installations) 
+* [Tests](#tests) 
+* [Technologies](#technologies) 
+* [APIs](#apis) 
+* [License](#license)
+* [Contact](#contact)
 
-In the project directory, you can run:
+## Links
+Published URL: [https://spencercreer.github.io/react-employee-directory/](https://spencercreer.github.io/react-employee-directory/)
 
-### `npm start`
+Repository: [https://github.com/spencercreer/react-employee-directory](https://github.com/spencercreer/react-employee-directory)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Animation
+The following animation demonstrates the application functionality:
+![DEVerest Employee Directory animation](TBD)
 
-### `npm test`
+## Instructions
+Search for employee information in the three fields of the search form. When a value is typed in an input field, the users are filtered using state in the React virtual DOM.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
+To install necessary dependencies, run the following command:
 
-### `npm run build`
+  ```
+  npm i
+  ```
+## Tests
+To run tests, run the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```
+  Tests in development
+  ```
+    
+## Contribute
+Please submit a PR if you would like to contribute
+## Technologies
+ * JavaScript
+ * HTML
+ * CSS
+ * Bootstrap
+ * Node.js
+ * npm
+ * React.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## APIs 
+The application utilizes the following APIs:
+* [Random User API](https://randomuser.me/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+This project is licensed under the MIT license.
 
-### `npm run eject`
+## Contact
+For questions or comments, please contact me.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Email: <a href="mailto: spencercreer@gmail.com" target="_blank">spencercreer@gmail.com</a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub: [spencercreer](https://github.com/spencercreer/)
