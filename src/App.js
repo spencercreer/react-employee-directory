@@ -18,7 +18,6 @@ class App extends Component {
   };
 
   handleSort = heading => {
-    console.log(heading)
     if (this.state.order === "descend") {
       this.setState({
         order: "ascend"
@@ -87,7 +86,6 @@ class App extends Component {
   handleTitleSearch = event => {
     const filter = event.target.value;
     const filteredList = this.state.employees.filter(item => {
-      console.log(Object.values(item))
       // filter by employee title
       let title = Object.values(item)[12].toLowerCase();
 
@@ -100,14 +98,11 @@ class App extends Component {
   componentDidMount() {
     API.search()
     .then(res => {
-      console.log(EmployeeInfo)
-      console.log(res)
       let users = res.data.results
       let employees = []
       for( let i=0; i < users.length; i++){
         employees[i] = { ...users[i], ...EmployeeInfo[i]}
       }
-      console.log(employees)
       this.setState({
           employees: employees,
           filteredEmployees: employees
