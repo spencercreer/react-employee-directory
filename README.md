@@ -1,8 +1,12 @@
+<p>
+<img src="./public/assets/logo-transparent.png" align="center" >
+</p>
+
 # DEVerest Employee Directory
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-This is an employee directory React.js application. Employees can view information about their colleagues and can search by employee name, id, and title.
+The DEVerest employee directory. This is a React.js application that allows employees to view information about their colleagues. Users can search for employee information by employee name, title, or id.
 
 ## Table of Contents
 * [Links](#links)
@@ -23,16 +27,23 @@ Repository: [https://github.com/spencercreer/react-employee-directory](https://g
 
 ## Animation
 The following animation demonstrates the application functionality:
+<br>
 ![DEVerest Employee Directory animation](./public/assets/emp_dir.gif)
 
 ## Instructions
 Search for employee information in the three fields of the search form. When a value is typed in an input field, the users are filtered using state in the React virtual DOM.
 
 ## Installation
+This application utilizes the following dependencies:
+
+ * axios
+ * bootstrap
+ * react
+
 To install necessary dependencies, run the following command:
 
   ```
-  npm i
+  npm install
   ```
 ## Tests
 To run tests, run the following command:
